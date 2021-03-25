@@ -1,20 +1,40 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>MY First Web Page</title>
-  </head>
- <body>
-   <hi>Welcome to my first web page</hi>
-   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut commodo elit lorem, non tincidunt erat venenatis et. Nullam mattis tortor ac eros hendrerit, nec vehicula augue tempor. Duis a eleifend ex. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nam eget convallis dui. Sed vel semper lorem. In a fringilla nunc. Morbi vel mollis libero, vel viverra ante. Vestibulum pharetra eleifend purus, ut egestas nibh suscipit et. Vivamus aliquet dignissim urna sit amet ultrices. Proin sed mi tincidunt, imperdiet leo a, bibendum sem. Fusce sed orci eu tortor commodo sodales vel ut ligula. Morbi ultricies fringilla libero, nec sodales metus semper posuere. Ut nunc arcu, condimentum vel magna vel, gravida maximus magna.
+<head>
+	
+	<title>Quick Start - Leaflet</title>
 
-Sed eu enim dapibus lectus rhoncus facilisis. Nullam gravida vulputate lorem. Nulla ultrices, erat nec viverra consectetur, enim leo sollicitudin dui, et tincidunt libero justo id arcu. Fusce dictum suscipit cursus. Maecenas odio elit, volutpat vel orci id, varius elementum massa. Sed purus ex, lobortis tincidunt lobortis et, pharetra eget neque. Phasellus at augue mauris. Pellentesque tortor turpis, mattis at consectetur non, porttitor eget enim. Etiam sollicitudin rhoncus felis eu sollicitudin. Nam placerat porttitor pulvinar. Integer accumsan, lorem eget aliquam convallis, nibh diam volutpat nulla, eu volutpat lectus dui eu orci. Suspendisse sollicitudin et diam in tincidunt. Phasellus sit amet lectus magna. Sed in velit pretium, dignissim libero eget, convallis quam. Integer finibus tempor elementum.
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
 
-Aliquam convallis ut lectus et sollicitudin. Suspendisse vel tellus porta, scelerisque ante sagittis, viverra sem. Proin gravida, mauris eget luctus commodo, quam nisl maximus ligula, vel congue ante diam et lacus. Ut in ante vel nisl molestie lacinia. Sed accumsan ante in magna tempor, ut vulputate nisi ultrices. Nulla facilisi. Nulla facilisi. Donec rutrum eleifend fermentum. Fusce posuere ullamcorper venenatis. Phasellus vitae pharetra sapien. Proin sapien lacus, auctor nec euismod id, auctor nec dui. In hac habitasse platea dictumst.
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
 
-Mauris eget odio vitae urna aliquet auctor. Sed et lacus vitae sem condimentum posuere. Nunc accumsan posuere urna, a malesuada lectus porttitor cursus. Aliquam maximus placerat metus, scelerisque mattis elit varius vel. Nullam ornare rhoncus urna non pulvinar. In egestas neque nec nulla mattis commodo. Curabitur eget blandit nunc. Curabitur at pulvinar sem. Donec a rutrum turpis. Nunc ligula urna, lobortis ac dui nec, eleifend rutrum dolor.
 
-Fusce vehicula iaculis risus a condimentum. Integer suscipit est at enim sollicitudin, nec eleifend est cursus. Suspendisse potenti. Proin interdum dui id diam cursus pulvinar. Maecenas at mauris non odio cursus placerat. Nulla molestie eros eu mi iaculis sodales. Aenean faucibus odio viverra, aliquam diam ac, condimentum ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras porttitor tempus odio, quis rutrum eros pulvinar vitae. Etiam in vulputate eros, vitae tempor arcu. Sed accumsan odio vel quam faucibus ultrices. Quisque eleifend, quam ac faucibus aliquam, sapien mauris efficitur lacus, a scelerisque metus mauris vel quam.
+	
+</head>
+<body>
 
-Ut ac est leo. Mauris sit amet ex efficitur, finibus nulla et, varius nibh. Morbi ac varius risus. Nullam aliquam posuere tincidunt. Nullam dapibus dolor non lorem rutrum dapibus. Sed cursus eu tellus non bibendum. Morbi id elementum sapien. Vivamus pellentesque dictum laoreet. Maecenas vitae magna nec libero rutrum porta. Donec in bibendum sem. Donec eu elit et lectus facilisis vestibulum.</p>
-  </body>
+
+
+<div id="mapid" style="width: 600px; height: 400px;"></div>
+<script>
+
+	var mymap = L.map('mapid').setView([51.505, -0.09], 13);
+
+	L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+		maxZoom: 18,
+		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
+			'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+		id: 'mapbox/streets-v11',
+		tileSize: 512,
+		zoomOffset: -1
+	}).addTo(mymap);
+
+</script>
+  
+  
+ </body>
 </html>
